@@ -5,10 +5,10 @@ jobs:
       - image: cibuilds/hugo:0.49 # the primary container, where your job's commands are run
     working_directory: ~/project
     steps:
-      - checkout # check out the code in the project directory
+      - run: apk update && apk add git
+      - run: git submodule sync && git submodule update --init
       - run:
-          name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s src/
-      - run:
-          name: "Test Website"
-          command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+          name: install AWS CLI (first install pip, the Python package manager)
+          command: |
+            apk add --update python python-dev py-pip build-base
+            pip install awscli
