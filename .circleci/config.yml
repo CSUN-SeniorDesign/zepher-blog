@@ -5,13 +5,13 @@ jobs:
     environment:
       HUGO_BUILD_DIR: ~/hugo/public
     steps:
-      - run: apt-get install git
+      - run: sudo apt-get install git
       - checkout #this is to checkout
       - run:
           name: install hugo 
           command: |
-           wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
-           apt-get install dpkg
-           dpkg -i hugo_0.49_Linux-64bit.deb
+           sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+           sudo apt-get install dpkg
+           sudo dpkg -i hugo_0.49_Linux-64bit.deb
 
        
