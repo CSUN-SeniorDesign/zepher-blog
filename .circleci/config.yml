@@ -18,8 +18,8 @@ jobs:
       - run:
           name: install hugo 
           command: |
-           sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
-           sudo apt-get install dpkg
-           sudo dpkg -i hugo_0.49_Linux-64bit.deb
+           wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+           apt-get install dpkg
+           dpkg -i hugo_0.49_Linux-64bit.deb
 
        
