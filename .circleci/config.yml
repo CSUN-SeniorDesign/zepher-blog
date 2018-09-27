@@ -15,3 +15,9 @@ jobs:
           command: |
             apk add --update python python-dev py-pip build-base
             pip install awscli
+      - run:
+          name: install hugo 
+          command: |
+           git clone https://github.com/CSUN-SeniorDesign/zephyr-blog.git
+
+       
