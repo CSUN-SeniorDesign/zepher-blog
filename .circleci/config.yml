@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: machine
+    machine: true
     environment:
       HUGO_BUILD_DIR: ~/hugo/public
     steps:
