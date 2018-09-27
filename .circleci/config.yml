@@ -18,6 +18,8 @@ jobs:
       - run:
           name: install hugo 
           command: |
-           git clone https://github.com/CSUN-SeniorDesign/zephyr-blog.git
+           sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+           sudo apt-get install dpkg
+           sudo dpkg -i hugo_0.49_Linux-64bit.deb
 
        
