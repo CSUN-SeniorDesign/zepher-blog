@@ -16,3 +16,6 @@ For the group I had to select what name I wanted to call it, which I just called
 After reviewing the Auto Scaling Group I created the group and then verified that it was working. To verify that it worked I had to see if it had created the instances after finishing it, which looked like it didn't. The Activity History tab created a bunch of errors saying it didn't have permissions to do so which I assumed meant they weren't able to create the instances. I don't have a screenshot of the error but I didn't bother to check the EC2 tab to see if it actually didn't create the instance but it did. There were new instances that were created that using the ASG which was strange. 
 
 Unfortunately I realized that instead of using the ASG through AWS that I had to create the ASG on terraform as well as use HashiCorp Packer. Both were an oversight on my part but it's something I'll be able to try to know how to do over the weekend.
+
+One of the Documentation that I had used for guidance
+  https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html
