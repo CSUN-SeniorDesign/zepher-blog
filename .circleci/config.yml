@@ -32,7 +32,7 @@ jobs:
       - run:
           name: adding the tar file to s3 bucket 
           command: |
-            aws s3 cp /home/circleci/project/Project1/zephyr/$CIRCLE_SHA1.tar.gz s3://zephyrbuckets3/circleciuploads     
+            aws s3 cp /home/circleci/project/Project1/zephyr/$CIRCLE_SHA1.tar.gz s3://zephyrbuckets3/circleciuploads/   
         
            
      
