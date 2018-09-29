@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Zephyr</title>
-    <link>zephyr90.com/tags/</link>
+    <link>./tags/</link>
     <description>Recent content in Tags on Zephyr</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Sep 2018 21:43:29 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 28 Sep 2018 14:33:34 -0700</lastBuildDate>
     
-	<atom:link href="zephyr90.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="./tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Taga</title>
-      <link>zephyr90.com/tags/taga/</link>
-      <pubDate>Fri, 21 Sep 2018 21:43:29 -0700</pubDate>
+      <link>./tags/taga/</link>
+      <pubDate>Fri, 28 Sep 2018 14:33:34 -0700</pubDate>
       
-      <guid>zephyr90.com/tags/taga/</guid>
+      <guid>./tags/taga/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tagb</title>
-      <link>zephyr90.com/tags/tagb/</link>
-      <pubDate>Fri, 21 Sep 2018 21:43:29 -0700</pubDate>
+      <link>./tags/tagb/</link>
+      <pubDate>Fri, 28 Sep 2018 14:33:34 -0700</pubDate>
       
-      <guid>zephyr90.com/tags/tagb/</guid>
+      <guid>./tags/tagb/</guid>
       <description></description>
     </item>
     

@@ -10,7 +10,7 @@
     
 
     
-    <title>Project 1 - Post 1: Tonny</title>
+    <title>Project 2 Post 1: Daniel</title>
 
     
     
@@ -19,15 +19,17 @@
 
   
   
-  <meta name="author" content="Tonny Wong" />
-  <meta name="description" content="Tonny Wong:  Assigned duties for this week: - Learn IAM Terraform - Edit Blog post in Hugo - Configure issues in Hugo - Test IAM script for Terraform. - Learn Editing GitHub Markdown Files. Learning to setup IAM user in Terraform: I have went to Terraform tutorials and guides in order to proceed with creating AWS IAM in Terraform: - To create a AWS IAM in Terraform we would need to create a file with the extension of .">
+  <meta name="author" content="Author Name" />
+  <meta name="description" content="For this project I was tasked with doing AWS Auto Scaling with HashiCorp Packer. After being assigned these tasked I went to AWS console to see what they had in regards to Auto Scaling. I found that in the EC2 instances that they had a built in Auto Scaling and so I read some documentation about it and learned that it&amp;rsquo;s as easy as setting up an instance.
+Reading the documentation lead me to the Auto Scaling wizard where I had to setup Launch Configuration, then chose an AMI and the type of instance I would need.">
 
   
   
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Project 1 - Post 1: Tonny" />
-    <meta name="twitter:description" content="Tonny Wong:  Assigned duties for this week: - Learn IAM Terraform - Edit Blog post in Hugo - Configure issues in Hugo - Test IAM script for Terraform. - Learn Editing GitHub Markdown Files. Learning to setup IAM user in Terraform: I have went to Terraform tutorials and guides in order to proceed with creating AWS IAM in Terraform: - To create a AWS IAM in Terraform we would need to create a file with the extension of ." />
+    <meta name="twitter:title" content="Project 2 Post 1: Daniel" />
+    <meta name="twitter:description" content="For this project I was tasked with doing AWS Auto Scaling with HashiCorp Packer. After being assigned these tasked I went to AWS console to see what they had in regards to Auto Scaling. I found that in the EC2 instances that they had a built in Auto Scaling and so I read some documentation about it and learned that it&amp;rsquo;s as easy as setting up an instance.
+Reading the documentation lead me to the Auto Scaling wizard where I had to setup Launch Configuration, then chose an AMI and the type of instance I would need." />
     <meta name="twitter:image" content="/img/cover.jpg" />
   
 
@@ -37,7 +39,7 @@
 <meta name="generator" content="Hugo 0.48">
 
 
-<link rel="canonical" href="./post/project1p1-tonny/">
+<link rel="canonical" href="./post/project2p1-daniel/">
 <link rel="alternative" href="/index.xml" title="Zephyr" type="application/atom+xml">
 
 
@@ -128,47 +130,23 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Project 1 - Post 1: Tonny</h1>
-      <p class="entry-meta"><span class="entry-time">Sep 13, 2018</span> 2 min read</p>
+      <h1 class="post-title">Project 2 Post 1: Daniel</h1>
+      <p class="entry-meta"><span class="entry-time">Sep 28, 2018</span> 3 min read</p>
     </header>
     
 
-    <article class="post-content"><h3> Tonny Wong: </h3>
+    <article class="post-content"><p>For this project I was tasked with doing AWS Auto Scaling with HashiCorp Packer. After being assigned these tasked I went to AWS console to see what they had in regards to Auto Scaling. I found that in the EC2 instances that they had a built in Auto Scaling and so I read some documentation about it and learned that it&rsquo;s as easy as setting up an instance.</p>
 
-<pre><code>Assigned duties for this week:
+<p>Reading the documentation lead me to the Auto Scaling wizard where I had to setup Launch Configuration, then chose an AMI and the type of instance I would need. I chose the Free tier to prevent bills from being to high if it were to charge us. The documentation told me to setup a key pair, I thought it would be wise to use the one we already have because our terraform is setup with one .pem file that gives access to what it needs. If that was the case for that then using the existing key to use for the auto scaling made sense. This was just to create the launch configuration, afterwards I had to create Auto Scaling Group.</p>
 
-        - Learn IAM Terraform
-        - Edit Blog post in Hugo 
-        - Configure issues in Hugo
-        - Test IAM script for Terraform.
-        - Learn Editing GitHub Markdown Files.
+<p>For the group I had to select what name I wanted to call it, which I just called it something that I can identify it easily like Project2-ASG. Then set the group size which effected the amount of instances it would create, the project requirements doesn&rsquo;t really give much details about how many so as a group we decided to create a max of 2 for now and a minimum of 1. The network section was a little confusing because it needed a VPC but not one we created but one that was &ldquo;default&rdquo; Amazon. This type of VPC didn&rsquo;t exist in our AWS so I had it create a new one. After creating and selecting this VPC I had to give it subnets for it to use, I wasn&rsquo;t quite sure if the Auto scaling needed to use public or private and after talking to my group we decided that it was appropriate for it to use only the private subnets.</p>
 
-    Learning to setup IAM user in Terraform:
+<p>After reviewing the Auto Scaling Group I created the group and then verified that it was working. To verify that it worked I had to see if it had created the instances after finishing it, which looked like it didn&rsquo;t. The Activity History tab created a bunch of errors saying it didn&rsquo;t have permissions to do so which I assumed meant they weren&rsquo;t able to create the instances. I don&rsquo;t have a screenshot of the error but I didn&rsquo;t bother to check the EC2 tab to see if it actually didn&rsquo;t create the instance but it did. There were new instances that were created that using the ASG which was strange.</p>
 
-        I have went to Terraform tutorials and guides in order to proceed with creating AWS IAM in Terraform:
-            - To create a AWS IAM in Terraform we would need to create a file with the extension of .tf
-            - Some configuration exaples are within the Terraform documents which I have used a couple of them such as:
+<p>Unfortunately I realized that instead of using the ASG through AWS that I had to create the ASG on terraform as well as use HashiCorp Packer. Both were an oversight on my part but it&rsquo;s something I&rsquo;ll be able to try to know how to do over the weekend.</p>
 
-                    - AWS_IAM_ROLE
-                    - AWS_IAM_INSTANCE_PROFILE
-                    - AWS_IAM_ROLE_POLICY
-
-            - These scripts are given in the Terraform guide, it is where we can setup automation and policies where you can give certain permissions in each persons role.
-                        - We do have to create a EC2 instance user with Terraform so that the script would work when running on command.
-
-    Hugo Blog Post:
-
-        - There was an issue with the Hugo Blog since it was giving dependancy issues in github.
-                - I have been using the right command to fix the issue but was in the wrong folder.
-                - I have then ran a &quot;npm install&quot; and a &quot;npm audit fix&quot; towards the themes folder where the theme that me and my group selected have downloaded.
-                        - Reading through the npm audit fix i have seen the multiple outdated packets and then fixed.
-                - Learned to format separately from markdown file for the website and also for github.
-                        - Markdown files can be treated as html formatting for Hugo static blog but does not work for github which will be different formatting to get the same results.
-                                - github can use html formatting but will not work equally.
-                                - github can call out images this is an example of what can be put in the markdown file:
-                                        -  ![GitHub Logo](/images/logo.png)
-                - Then I have the duty to fix all formats for the group members so that it should be easy to read.
-</code></pre>
+<p>One of the Documentation that I had used for guidance
+  <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html</a></p>
 </article>
     <footer class="post-footer">
       
@@ -181,9 +159,9 @@
       </ul>
       
       <div class="sharing">
-        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=.%2fpost%2fproject1p1-tonny%2f" title="Share on Facebook"></a>
-        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Project%201%20-%20Post%201%3a%20Tonny&amp;url=.%2fpost%2fproject1p1-tonny%2f" title="Share on Twitter"></a>
-        <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Project%201%20-%20Post%201%3a%20Tonny&amp;url=.%2fpost%2fproject1p1-tonny%2f" title="Share on Google+"></a>
+        <a class="share share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?u=.%2fpost%2fproject2p1-daniel%2f" title="Share on Facebook"></a>
+        <a class="share share-twitter" target="_blank" href="https://twitter.com/intent/tweet/?text=Project%202%20Post%201%3a%20Daniel&amp;url=.%2fpost%2fproject2p1-daniel%2f" title="Share on Twitter"></a>
+        <a class="share share-google" target="_blank" href="https://plus.google.com/share?url=Project%202%20Post%201%3a%20Daniel&amp;url=.%2fpost%2fproject2p1-daniel%2f" title="Share on Google+"></a>
       </div>
     </footer>
   </section>
