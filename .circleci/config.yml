@@ -1,20 +1,20 @@
 version: 2
 jobs:
   build:
-    docker:
-        - image: cibuilds/hugo:latest
-    working_directory: ~/hugo
-    environment: ~/hugo/public
     steps:
       - run:
           name: installing git  
           command: |
-            apk update && apk add git
-
+            sudo apt-get install git
+      - run:
+          name: installing python
+          command: |
+            sudo apt-get install python3
+            python --version
+      
       - run:
           name: installing aws cli 
           command: |
-            apk add --update python python-dev py-pip build-base
             sudo pip install awscli
       - run:
           name: install hugo  and removing the install file
