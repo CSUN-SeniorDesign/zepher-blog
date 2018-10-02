@@ -7,6 +7,11 @@ jobs:
           name: installing git  
           command: |
             sudo apt-get install git
+      - run:
+          name: installing python
+          command: |
+            sudo apt-get install python3
+            python --version
       
       - run:
           name: installing aws cli 
@@ -32,8 +37,10 @@ jobs:
       - run:
           name: adding the tar file to s3 bucket 
           command: |
-            aws s3 mv s3://zephyrbuckets3/circleciuploads/ s3://zephyrbuckets3/circleciuploadspast/ --recursive
-            aws s3 cp /home/circleci/project/Project1/zephyr/$CIRCLE_SHA1.tar.gz s3://zephyrbuckets3/circleciuploads/   
+            aws s3 mv s3://zephyrproject2/circleciproduction/ s3://zephyrproject2/circleciuploadspast/ --recursive
+            aws s3 mv s3://zephyrproject2/circleciuploads/ s3://zephyrproject2/circleciproduction/ --recursive
+            aws s3 cp /home/circleci/project/Project1/zephyr/$CIRCLE_SHA1.tar.gz s3://zephyrproject2/circleciuploads/ 
+
         
            
      
