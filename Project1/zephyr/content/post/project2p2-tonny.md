@@ -1,9 +1,9 @@
 ---
-title: "Project 2 Part 2 Tonny"
+title: "Project 2 Post 2 Tonny"
 author: "Tonny Wong"
 cover: "/img/cover.jpg"
 tags: ["tagA", "tagB"]
-date: 2018-10-04T21:43:29-07:00
+date: 2018-10-04T00:42:09-07:00
 draft: false
 ---
 <h3> Tonny Wong: </h3>
