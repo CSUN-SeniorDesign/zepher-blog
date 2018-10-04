@@ -4,7 +4,7 @@ author: "Author Name"
 cover: "/img/cover.jpg"
 tags: ["tagA", "tagB"]
 date: 2018-09-28T22:06:47-07:00
-draft: true
+draft: false
 ---
 
 	For this project it was decided that I would be team leader. As such, one of my major tasks this week was to assign jobs to the others. Due to last project spilling over into this weeks, we were

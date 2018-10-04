@@ -1,5 +1,5 @@
 ---
-title: "Project1p2 Tonny"
+title: "Project 1 Post 2 Tonny"
 author: "Tonny Wong"
 cover: "/img/cover.jpg"
 tags: ["tagA", "tagB"]

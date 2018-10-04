@@ -1,7 +1,7 @@
 ---
 title: "Project 1 Week 2 - Hayden"
 date: 2018-09-21T14:59:33-07:00
-draft: true
+draft: false
 ---
 
 > Assigned Task: Continue to work on and finish Ansible playbooks
