@@ -8,7 +8,7 @@ draft: false
 ---
 <h3> Tonny Wong: </h3>
 
-	Needs to be edited:
+	Needs to be edited :
 	Duty this week:
 	
 		- 	Learn about CircleCI
