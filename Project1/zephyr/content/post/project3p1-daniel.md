@@ -39,12 +39,13 @@ Reading it now I'm not to sure what these commands are meant to do. My understan
 
 Current Multi-Stage Docker File:
 
+~~~
 FROM alpine:3.5 as build
 
 ENV HUGO_VERSION 0.49.1
 ENV HUGO_BINARY hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
 
-# Install Hugo
+#Install Hugo
 RUN set -x && \
 	apk add --update wget ca-certificates && \
 	wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/${HUGO_BINARY} && \
@@ -67,6 +68,7 @@ COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /site/public /var/www/site
 
 WORKDIR /var/www/site
+~~~
 
 The issue I'm currently running into is that Hugo fails to complete the build because it can't seem to find the theme directory. I'm working with my team to see how to fix the issue.
 
