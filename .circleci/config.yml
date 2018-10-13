@@ -18,6 +18,14 @@ jobs:
           command: |
             sudo pip install awscli
       - run:
+          name: Install Docker client
+          command: |
+            set -x
+            VER="17.03.0-ce"
+            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            mv /tmp/docker/* /usr/bin
+      - run:
           name: install hugo  and removing the install file
           command: |
            sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
@@ -25,7 +33,7 @@ jobs:
            sudo dpkg -i hugo_0.49_Linux-64bit.deb
            cd /home/circleci/project
            sudo rm hugo_0.49_Linux-64bit.deb
-           
+
       - checkout #this is to checkout the current most updated github master branch   
       - run:
           name: removing old public file and creating new one using hugo and zipping it using tar
