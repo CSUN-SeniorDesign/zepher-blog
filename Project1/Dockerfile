@@ -14,7 +14,7 @@ RUN set -x && \
   rm /var/cache/apk/*
 
 #circleCI grab should be here
-COPY ./zephyrblog /site/
+COPY zephyr /site/
 
 WORKDIR /site
 
@@ -22,8 +22,10 @@ RUN /usr/bin/hugo
 
 FROM nginx:alpine
 
-COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build /site/public /var/www/site
 
 WORKDIR /var/www/site
+
+RUN ls -al 
