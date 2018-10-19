@@ -26,7 +26,7 @@ jobs:
             fi
       - checkout
       - run:
-          name: installing aws cli
+          name: Docker Image
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 sudo pwd
@@ -43,7 +43,7 @@ jobs:
             fi
           
       - run:
-          name: installing aws cli
+          name: Pushing Image
           command: |  
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 cd /home/circleci/project/project1
