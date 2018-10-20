@@ -54,7 +54,8 @@ jobs:
                 sudo chown ubuntu:ubuntu image.txt
                 sudo docker tag project1:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/zephyrecr:latest
                 sudo docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/zephyrecr:latest
-                sudo echo "Pushed new image" > image.txt
+                sudo ls -al
+                echo "Pushed new image" > image.txt
                 aws s3 rm s3://zephyrbucketp3 --recursive
                 aws s3 cp image.txt s3://zephyrbucketp3
             fi
