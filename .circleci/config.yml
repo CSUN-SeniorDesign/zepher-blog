@@ -50,6 +50,7 @@ jobs:
                 sudo docker images
                 sudo pwd
                 sudo touch image.txt
+                sudo chmod 755 image.txt
                 sudo docker tag project1:latest $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/zephyrecr:latest
                 sudo docker push $AWS_ACCOUNT_ID.dkr.ecr.us-west-2.amazonaws.com/zephyrecr:latest
                 sudo echo "Pushed new image" > image.txt
