@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - run:
+          name: installing git  
+          command: |
+            sudo apt-get install git
+      - run:
+          name: installing python
+          command: |
+            sudo apt-get install python3
+            python --version
+      
+      - run:
+          name: installing aws cli 
+          command: |
+            sudo pip install awscli
+      - run:
+          name: Install Docker client
+          command: |
+            set -x
+            VER="17.03.0-ce"
+            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            sudo mv /tmp/docker/* /usr/bin
+      - run:
+          name: install hugo  and removing the install file
+          command: |
+           sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49/hugo_0.49_Linux-64bit.deb
+           sudo apt-get install dpkg
+           sudo dpkg -i hugo_0.49_Linux-64bit.deb
+           cd /home/circleci/project
+           sudo rm hugo_0.49_Linux-64bit.deb
+
+      - checkout #this is to checkout the current most updated github master branch   
+      - run:
+          name: removing old public file and creating new one using hugo and zipping it using tar
+          command: |
+           cd /home/circleci/project/Project1/zephyr/
+           sudo rm -r public/
+           sudo hugo
+           tar -zcvf $CIRCLE_SHA1.tar.gz public/
+      - run:
+          name: adding the tar file to s3 bucket 
+          command: |
+            aws s3 mv s3://zephyrproject2/circleciuploads/ s3://zephyrproject2/circleciuploadspast/ --recursive
+            aws s3 mv s3://zephyrproject2/circleciproduction/ s3://zephyrproject2/circleciuploads/ --recursive
+            aws s3 cp /home/circleci/project/Project1/zephyr/$CIRCLE_SHA1.tar.gz s3://zephyrproject2/circleciproduction/ 
+        
+           
+     

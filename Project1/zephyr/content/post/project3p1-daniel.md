@@ -8,7 +8,7 @@ draft: false
 ---
 For Project 3 I tasked myself with doing the Docker fIle. From my understanding this will essentially do what Packer does in regards to our image but with a more efficient and more compressed program called Docker. Since I'm not really familiar with Docker I had to read through the documentation to understand how I would begin the task of creating a image with Docker.
 
-To structure my task I had to understand what needed to be in the container. The project 3 instructions states that Hugo and Nginx have to be in the Docker file to make our site available. To begin I created to Docker Files that would run alongside each other. I thought this was the way it had to be done because for some reason when I was researching I had read that running multiple FROM lines in a single Docker file was bad. So I created to directories that would contain my containers for each of the requirements.
+To structure my task I had to understand what needed to be in the container. The project 3 instructions states that Hugo and Nginx have to be in the Docker file to make our site available. To begin I created to Docker Files that would run alongside each other. I thought this was the way it had to be done because for some reason when I was researching I had read that running multiple FROM lines in a single Docker file was bad. So I created two directories that would contain my containers for each of the requirements.
 
 One container contained the Nginx image and the other contained the Hugo image:
 
